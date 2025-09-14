@@ -1,0 +1,11 @@
+{
+  "class": [
+    "EasyPdfBuilder",
+    "Paragraph",
+    "EasyPdfWrapper",
+    "EasyPageLayout",
+    "EasyFontStyle",
+    "EasyColor",
+    "EasyLineGroup"
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  { "tag": "comment", "color": "#f5d", "fontStyle": "italic" },
+  { "tag": "keyword", "color": "#0000b2", "fontWeight": "bold" },
+  { "tag": "controlKeyword", "color": "#0000b2", "fontWeight": "bold" },
+  { "tag": "definitionKeyword", "color": "#0000b2", "fontWeight": "bold" },
+  { "tag": "typeName", "color": "#267f99" },
+  { "tag": "className", "color": "#267f99", "fontWeight": "bold" },
+  { "tag": "function(variableName)", "color": "#795e26" },
+  { "tag": "variableName", "color": "#111111" },
+  { "tag": "propertyName", "color": "#111111" },
+  { "tag": "string", "color": "#008000" },
+  { "tag": "number", "color": "#1750eb" },
+  { "tag": "bool", "color": "#660e7a", "fontWeight": "bold" },
+  { "tag": "annotation", "color": "#b00055" },
+  { "tag": "meta", "color": "#b00055" },
+  { "tag": "attributeName", "color": "#aa5500" },
+  { "tag": "operator", "color": "#000000" },
+  { "tag": "punctuation", "color": "#000000" },
+  { "tag": "invalid", "color": "#ff0000", "backgroundColor": "#fff0f0" }
+]
