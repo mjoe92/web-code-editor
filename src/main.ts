@@ -21,7 +21,7 @@ export interface JavaHighlightStyle {
   [key: string]: any
 }
 
-export default class JavaCodeEditor extends HTMLElement {
+export default class Main extends HTMLElement {
   private editorView?: EditorView;
 
   connectedCallback(): void {
@@ -160,4 +160,4 @@ export default class JavaCodeEditor extends HTMLElement {
   }
 }
 
-customElements.define("java-code-editor", JavaCodeEditor);
+customElements.define("java-code-editor", Main);

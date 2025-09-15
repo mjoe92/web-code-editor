@@ -1,6 +1,5 @@
 {
-  "name": "web-code-editor",
-  "private": true,
+  "name": "@mjoe92/web-code-editor",
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
@@ -17,9 +16,26 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:artifact": "vite build --config vite.lib.config.js",
+    "preview": "vite preview",
+    "publish:artifact": "npm publish",
+    "publish:page": "gh-pages -d dist",
+    "deploy": "npm run build & npm run publish:artifact & npm run publish:page"
   },
   "devDependencies": {
-    "vite": "^7.1.2"
+    "gh-pages": "^6.3.0",
+    "vite": "^7.1.4"
+  },
+  "main": "dist/artifacts/web-code-editor.umd.js",
+  "module": "dist/artifacts/web-code-editor.js",
+  "files": [
+    "dist/artifacts/"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjoe92/web-code-editor.git"
   }
 }
