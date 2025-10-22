@@ -1,0 +1,20 @@
+{
+  "&": {
+    "color": "black",
+    "backgroundColor": "#edb9b9"
+  },
+  ".cm-content": {
+    "caretColor": "#72898f"
+  },
+  "&.cm-focused .cm-cursor": {
+    "borderLeftColor": "#0e9"
+  },
+  "&.cm-focused .cm-selectionBackground, ::selection": {
+    "backgroundColor": "#a8edda"
+  },
+  ".cm-gutters": {
+    "backgroundColor": "#5cc2db",
+    "color": "black",
+    "border": "none"
+  }
+}

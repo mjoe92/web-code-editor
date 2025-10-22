@@ -1,0 +1,143 @@
+// Variables
+$font-stack: "JetBrains Mono", "Fira Mono", monospace
+$border-radius: 7px
+$transition: 0.3s cubic-bezier(0.4,0,0.2,1)
+
+$color-bg-light: #f5f7fa
+$color-bg-dark: #23272e
+$color-panel-light: #fff
+$color-panel-dark: #232730
+$color-text-light: #23272e
+$color-text-dark: #ebeef0
+$color-primary: #1976d2
+$divider-light: #dee2ea
+$divider-dark: #374151
+
+body
+  font-family: $font-stack
+  margin: 0 20px
+  background: $color-bg-light
+  color: $color-text-light
+  min-height: 100vh
+  transition: background $transition, color $transition
+
+  &[data-theme="dark"]
+    background: $color-bg-dark
+    color: $color-text-dark
+
+h1, h2, h3
+  margin-bottom: 0.6em
+
+h1
+  font-size: 2rem
+  color: $color-primary
+
+h2
+  font-size: 1.7rem
+  color: darken($color-primary, 5%)
+  
+h3
+  font-size: 1.4rem
+  color: darken($color-primary, 10%)
+
+.editor-pair
+  display: flex
+  gap: 10px
+  margin-bottom: 2em
+
+  .column
+    width: 50%
+    flex-wrap: wrap
+    min-width: 0
+    height: fit-content
+
+  @media (max-width: 900px)
+    flex-direction: column
+    .column
+      width: auto
+
+// Editor wrapper styles for all code editors
+code-editor, java-editor, javascript-editor
+  display: block
+  background: $color-panel-light
+  border-radius: $border-radius
+  border: 1px solid $divider-light
+  margin-bottom: 0.7em
+  box-shadow: 0 3px 14px 0 rgba(44,44,48,0.08)
+  transition: background $transition, border-color $transition
+  font-family: $font-stack
+
+  body[data-theme="dark"] &
+    background: $color-panel-dark
+    border-color: $divider-dark
+
+// Optional: slot/part for header styles
+code-editor::part(header),
+java-editor::part(header),
+javascript-editor::part(header)
+  background: rgba($color-primary, 0.11)
+  color: $color-primary
+  font-weight: 600
+  padding: 0.2em
+  border-bottom: 1px solid $divider-light
+  font-size: 0.8rem
+
+  body[data-theme="dark"] &
+    background: rgba($color-primary, 0.17)
+    color: lighten($color-primary, 28%)
+    border-bottom: 1px solid $divider-dark
+
+// Contrast Switcher Button
+.contrast-switcher
+  position: fixed
+  top: 1em
+  right: 1em
+  background: lighten($color-primary, 25%)
+  border: none
+  border-radius: 2em
+  box-shadow: 0 1px 7px rgba(0,0,0,0.13)
+  color: $color-primary
+  cursor: pointer
+  outline: none
+  transition: background $transition, color $transition
+  z-index: 1
+  height: fit-content
+  padding: 0.4em
+
+  img
+    height: 2.5em
+    vertical-align: middle
+
+  &:hover
+    background: $color-primary
+    color: #fff
+
+  body[data-theme="dark"] &
+    color: $color-primary
+    box-shadow: 0 1px 7px rgba(0,0,0,0.27)
+
+  body[data-theme="dark"] &:hover
+    background: $color-primary
+    color: $color-primary
+    box-shadow: 0 1px 7px rgba(0,0,0,0.27)
+    
+
+#editor-select
+  display: inline-block
+  font-size: 1.3rem
+  font-family: inherit
+  font-weight: 600
+  color: $color-primary
+  background: transparent
+  border: none
+  outline: none
+  letter-spacing: 0.03em
+  cursor: pointer
+  position: relative
+  box-shadow: none
+  transition: color 0.2s, border-color 0.2s
+  margin-bottom: 0.6em
+
+body[data-theme="dark"] #editor-select
+  color: darken($color-primary, 10%)
+  border-bottom-color: darken($color-primary, 10%)

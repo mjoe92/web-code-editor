@@ -1,0 +1,24 @@
+[
+  {
+    "name": "JavaScript",
+    "left": {
+      "textSrc": "javascript/left.txt",
+      "tag": "code-editor"
+    },
+    "right": {
+      "textSrc": "javascript/import.js",
+      "tag": "javascript-editor"
+    }
+  },
+  {
+    "name": "Java",
+    "left": {
+      "textSrc": "java/left.txt",
+      "tag": "code-editor"
+    },
+    "right": {
+      "textSrc": "java/Import.java",
+      "tag": "java-editor"
+    }
+  }
+]
