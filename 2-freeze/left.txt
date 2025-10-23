@@ -1,0 +1,1 @@
+<code-editor freeze>The non-editable text written in inner HTML will be shown here!</code-editor>

@@ -1,0 +1,14 @@
+[
+  { "tag": "comment", "color": "#808080", "fontStyle": "italic" },
+  { "tag": "keyword", "color": "#cc7832", "fontWeight": "bold" },
+  { "tag": "atom", "color": "#6897bb", "fontWeight": "bold" },
+  { "tag": "string", "color": "#6a8759" },
+  { "tag": "number", "color": "#6897bb" },
+  { "tag": "variableName", "color": "#a9b7c6" },
+  { "tag": "function", "color": "#ffc66d" },
+  { "tag": "className", "color": "#a9b7c6", "fontWeight": "bold" },
+  { "tag": "propertyName", "color": "#bababa" },
+  { "tag": "punctuation", "color": "#a9b7c6" },
+  { "tag": "operator", "color": "#a9b7c6" },
+  { "tag": "meta", "color": "#bbb529" }
+]
