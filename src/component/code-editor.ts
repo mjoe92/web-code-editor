@@ -37,7 +37,7 @@ export default class CodeEditor extends HTMLElement {
     this.header.className = 'title';
 
     this.editorContainer = document.createElement('div');
-    this.editorContainer.className = 'code-editor'
+    this.editorContainer.className = 'code-editor';
 
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.append(this.header, this.editorContainer);
@@ -64,6 +64,32 @@ export default class CodeEditor extends HTMLElement {
     }
   }
 
+  /**
+   * @return the current text content of the editor, or an empty string if the editor is not yet initialized
+   */
+  public getValue(): string {
+    return this.editorView?.state.doc.toString() ?? '';
+  }
+
+  /**
+   * Replaces the entire editor content with the given value.
+   * If the editor is not yet initialized, the value is stored as text content.
+   */
+  public setValue(value: string): void {
+    if (!this.editorView) {
+      this.textContent = value;
+      return;
+    }
+
+    this.editorView.dispatch({
+      changes: {
+        from: 0,
+        to: this.editorView.state.doc.length,
+        insert: value
+      }
+    });
+  }
+
   private initEditor(): void {
     if (this.editorView) {
       return;
@@ -77,12 +103,6 @@ export default class CodeEditor extends HTMLElement {
     ]).then(contents => this.createEditor(contents));
   }
 
-  /**
-   * @param fileSourceAttribute
-   *     component attribute for the file source to read
-   * @return the text content if it successfully read, otherwise undefined on missing attribute
-   * @thrown ReferenceError on false URI given
-   */
   private readFile = async (fileSourceAttribute: string) => {
     let url = this.getAttribute(fileSourceAttribute);
     if (!url) {
@@ -134,7 +154,6 @@ export default class CodeEditor extends HTMLElement {
     let completionDefinition = this.labels ? this.definitionComplete(this.labels) : [];
     if (convertedCompleteDefinition) {
       const definition = this.definitionComplete(convertedCompleteDefinition);
-
       completionDefinition = completionDefinition.concat(definition);
     }
 
@@ -161,31 +180,24 @@ export default class CodeEditor extends HTMLElement {
   }
 
   private resolveTag(tagString: string): any {
-    // parse e.g. "function(variableName)" or just the key like "keyword"
     const nested = tagString.match(/^(\w+)\((.+)\)$/);
     if (nested) {
-      const outer = nested[1]; // "method"
-      const inner = nested[2]; // "variableName"
-
-      return (tags as any) [outer](this.resolveTag(inner));
+      const outer = nested[1];
+      const inner = nested[2];
+      return (tags as any)[outer](this.resolveTag(inner));
     }
-
-    // Otherwise just e.g. "keyword"
-    return (tags as any) [tagString];
+    return (tags as any)[tagString];
   }
 
   private createTheme(theme?: string) {
     if (!theme) {
       return;
     }
-
-    const convertedTheme = JSON.parse(theme);
-    return EditorView.theme(convertedTheme);
+    return EditorView.theme(JSON.parse(theme));
   }
 
   private async autoComplete(context: CompletionContext, autoCompletionOptions: Completion[]): Promise<CompletionResult> {
     const before = context.matchBefore(/\w+/);
-
     return {
       from: before ? before.from : context.pos,
       options: autoCompletionOptions,
@@ -196,7 +208,6 @@ export default class CodeEditor extends HTMLElement {
   private addExtension<T>(extensions: Extension[], contentElement: T | undefined,
                           extensionFunction: (completeDefinition: T | undefined) => Extension | undefined) {
     const apply = extensionFunction.call(this, contentElement);
-
     if (apply) {
       extensions.push(apply);
     }
@@ -207,11 +218,10 @@ export default class CodeEditor extends HTMLElement {
       content = this.innerHTML;
       this.innerHTML = "";
     }
-
     return content;
   }
 
   private freezeEditor(freeze?: boolean) {
-    return EditorView.editable.of(!freeze)
+    return EditorView.editable.of(!freeze);
   }
 }

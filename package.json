@@ -1,7 +1,43 @@
 {
   "name": "@mjoe92/web-code-editor",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/artifacts/web-code-editor.js",
+      "types": "./dist/artifacts/component/main.d.ts"
+    },
+    "./react": {
+      "import": "./dist/artifacts/web-code-editor-react.js",
+      "types": "./dist/artifacts/react/index.d.ts"
+    },
+    "./vue": {
+      "import": "./dist/artifacts/web-code-editor-vue.js",
+      "types": "./dist/artifacts/vue/index.d.ts"
+    },
+    "./angular": {
+      "import": "./dist/artifacts/web-code-editor-angular.js",
+      "types": "./dist/artifacts/angular/index.d.ts"
+    }
+  },
+  "main": "./dist/artifacts/web-code-editor.js",
+  "module": "./dist/artifacts/web-code-editor.js",
+  "types": "./dist/artifacts/component/main.d.ts",
+  "files": [
+    "dist/artifacts/"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "vue": ">=3",
+    "@angular/core": ">=17",
+    "@angular/forms": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true },
+    "vue": { "optional": true },
+    "@angular/core": { "optional": true },
+    "@angular/forms": { "optional": true }
+  },
   "dependencies": {
     "@codemirror/autocomplete": "^6.18.7",
     "@codemirror/commands": "^6.8.1",
@@ -11,28 +47,30 @@
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.38.2",
     "@lezer/highlight": "^1.2.1",
-
     "@codemirror/lang-java": "^6.0.2",
     "@codemirror/lang-javascript": "^6.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@vitejs/plugin-react": "^6.0.2",
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "gh-pages": "^6.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0",
+    "vue": "^3.5.0"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:artifact": "vite build --config vite.lib.config.js",
+    "build:artifact": "tsc -p tsconfig.lib.json && vite build --config vite.lib.config.js",
     "preview": "vite preview",
     "publish:artifact": "npm publish",
     "publish:page": "gh-pages -d dist",
     "deploy": "npm run build & npm run publish:artifact & npm run publish:page"
   },
-  "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "vite": "^7.1.4"
-  },
-  "main": "dist/artifacts/web-code-editor.umd.js",
-  "module": "dist/artifacts/web-code-editor.js",
-  "files": [
-    "dist/artifacts/"
-  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

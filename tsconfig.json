@@ -1,21 +1,17 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "lib": ["ESNext", "DOM"],
+    "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "noEmit": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "strict": true,
-    "target": "ESNext",
-    "useDefineForClassFields": true
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "dist/artifacts",
+    "outDir": "dist/artifacts",
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
