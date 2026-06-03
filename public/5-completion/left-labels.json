@@ -1,0 +1,23 @@
+{
+  "class": [
+    "Car"
+  ],
+  "method": [
+    "age()"
+  ],
+  "keyword": [
+    "abstract",
+    "assert",
+    "break",
+    "case",
+    "catch"
+  ],
+  "typeName": [
+    "boolean",
+    "byte",
+    "short",
+    "int",
+    "long",
+    "double"
+  ]
+}

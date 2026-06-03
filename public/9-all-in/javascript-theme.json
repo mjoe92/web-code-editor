@@ -1,7 +1,7 @@
 {
   "&": {
     "color": "black",
-    "backgroundColor": "#034"
+    "backgroundColor": "inherit"
   },
   ".cm-content": {
     "caretColor": "#0e9"

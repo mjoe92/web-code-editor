@@ -1,0 +1,30 @@
+{
+  "class": [
+    "Animal",
+    "Dog",
+    "Cat",
+    "Person",
+    "User",
+    "Car",
+    "Rectangle",
+    "Circle",
+    "Shape",
+    "Calculator",
+    "Employee",
+    "Student",
+    "Teacher",
+    "Order",
+    "Product",
+    "ShoppingCart",
+    "Account",
+    "Bank",
+    "Timer",
+    "Logger",
+    "Database",
+    "APIClient",
+    "FormValidator",
+    "MathUtil",
+    "Config",
+    "EventEmitter"
+  ]
+}

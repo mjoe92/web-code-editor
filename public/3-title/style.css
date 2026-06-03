@@ -1,0 +1,9 @@
+/* The way to style the header */
+code-editor::part(header) {
+    background: rgba(#1976d2, 0.1);
+    color: #1976d2;
+    font-weight: 600;
+    padding: 0.2em;
+    border-bottom: 1px solid #dee2ea;
+    font-size: 0.8rem;
+}

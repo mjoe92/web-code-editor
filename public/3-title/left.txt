@@ -1,0 +1,1 @@
+<code-editor>The code editor with a title on header!</code-editor>
