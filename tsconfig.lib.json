@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "dist/artifacts",
+    "rootDir": "src"
+  },
+  "include": [
+    "src/component/**/*",
+    "src/react/**/*",
+    "src/vue/**/*",
+    "src/angular/**/*"
+  ]
+}

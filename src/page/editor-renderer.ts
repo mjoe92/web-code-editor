@@ -13,7 +13,7 @@ interface EditorConfig {
 
 function createEditorColumn(editorConfig: EditorConfig, left: boolean) {
   const editor = document.createElement(editorConfig.tag);
-  editor.setAttribute('textSrc', `8-language/${editorConfig.textSrc}`);
+  editor.setAttribute('textSrc', `9-language/${editorConfig.textSrc}`);
   editor.className = 'column';
 
   if (left) {

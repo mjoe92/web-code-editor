@@ -9,6 +9,7 @@
   <script type="module" src="src/page/editor-renderer.ts"></script>
   <script type="module" src="src/page/contrast-switcher.js"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
 </head>
   <body>
     <h1>Web Code Editor Usage</h1>
@@ -48,7 +49,7 @@
         <code-editor title="index.html" textSrc="5-completion/left.txt" freeze></code-editor>
         <code-editor title="labels.json" textSrc="5-completion/left-labels.json" freeze></code-editor>
       </div>
-      <code-editor class="column" textSrc="5-completion/right.js" autoCompletionSrc="5-completion/left-labels.json" ></code-editor>
+      <code-editor class="column" textSrc="5-completion/right.js" autoCompletionSrc="5-completion/left-labels.json"></code-editor>
     </div>
 
     <h3>To highlight words</h3>
@@ -60,13 +61,19 @@
       <code-editor class="column" textSrc="6-highlight/right.js" highlightSrc="6-highlight/highlight.json"></code-editor>
     </div>
 
-    <h3>To add theme for styling</h3>
+    <h3>To add constant theme for styling</h3>
     <div class="editor-pair">
       <div class="column">
         <code-editor title="index.html" textSrc="7-theme/left.txt" freeze></code-editor>
         <code-editor title="theme.json" textSrc="7-theme/theme.json" freeze></code-editor>
       </div>
       <code-editor class="column" textSrc="7-theme/right.js" themeSrc="7-theme/theme.json"></code-editor>
+    </div>
+
+    <h3>To freeze specific lines</h3>
+    <div class="editor-pair">
+      <code-editor class="column" title="index.html" textSrc="8-frozen-lines/left.txt" freeze></code-editor>
+      <code-editor class="column" textSrc="8-frozen-lines/right.js" frozenLines="1,2,5,7,9,11,13,14"></code-editor>
     </div>
 
     <h2>Language based editor</h2>
